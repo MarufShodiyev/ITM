@@ -1,0 +1,35 @@
+#header{
+    background: #0078E7;
+    .header-wrapper{
+        max-width: 873px;
+        ul{
+            margin-left: 70px;
+            // width: 38%;
+            height: 50px;
+            @include flex;
+            gap: 20px;
+            // align-items: end;
+            li{
+                
+                // background-color: red;
+                a{
+                    padding: 8px 20px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    font-weight: 300;
+                    color: #ffffff;
+                    
+                    @include flex;
+                    
+                    &:hover{
+                       background-color: blue;
+                       color: #ffffff;
+                       border-radius: 20px;
+                       translate: all 0.3s ;
+                        
+                    }
+                }
+            }
+        }
+    }
+}

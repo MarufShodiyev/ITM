@@ -1,0 +1,27 @@
+#semena{
+    background-image: url('../../images/semena-bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .semena-wrapper{
+        height: 500px;
+        @include flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        color: #fff;
+        padding: 100px 150px;
+        h2{
+            margin-left: 50px;
+            font-size: 45px;
+            font-weight: bold;
+            
+        }
+        p{
+            
+            font-size: 16px;
+            font-weight: 400;
+            margin-top: 10px;
+        }
+    }
+}

@@ -1,0 +1,89 @@
+#footer {
+  .footer-wrapper {
+    background-color: #fff;
+    .footer-top {
+      @include flex;
+      align-items: start;
+      justify-content: space-around;
+      // background: red;
+      padding: 50px 0px;
+      border-bottom: 1px solid #000;
+      .footer-logo{
+        p{
+            font-size: 16px;
+            font-weight: 300;
+            color: #000;
+            max-width: 220px;
+            width: 100%;
+        }
+      }
+      .content {
+        margin-top: 30px;
+        ul {
+          @include flex;
+          align-items: start;
+          justify-content: space-around;
+          gap: 50px;
+          li{
+            h3{
+                font-size: 18px;
+                font-weight: 600;
+                color: #000;
+            }
+            p{
+                font-size: 18px;
+                font-weight: 400;
+                color: #000;
+                padding-top: 10px;
+            }
+            .contact{
+                @include flex;
+                gap: 10px;
+                padding-top: 10px;
+                // margin-left: 40px;
+                .tel{
+                    @include flex;
+                    align-items: start;
+                    flex-direction: column;
+                    .number{
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #000000;
+                    }
+                    .telegram{
+                        font-size: 14px;
+                        font-weight: 700;
+                        text-decoration: underline;
+                        color:#0078E7;
+                        
+                    }
+                }
+            }
+            .email{
+                padding-top: 10px;
+                @include flex;
+                gap: 10px;
+                a{
+                    color: #000;
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+            }
+          }
+        }
+      }
+    }
+    .footer-bottom{
+      padding: 10px 0px;
+      @include flex;
+    //   text-align: center;
+    //   margin: 0 auto;
+      text-align: center;
+      justify-content: center;
+      span{
+        // text-align: center;
+          font-size:16px;
+      }
+    }
+  }
+}

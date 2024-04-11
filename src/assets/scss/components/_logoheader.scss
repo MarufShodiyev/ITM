@@ -1,0 +1,61 @@
+#logo-header{
+    background: #ffff;
+    .logo-header-wrapper{
+        height: 70px;
+        @include flex;
+        margin-left: 70px;
+        .search{
+            border: 1px solid #00000033;
+            background: #ffff;
+            @include flex;
+            margin-left: 20px;
+            max-width: 342px;
+            width: 100%;
+            justify-content: space-between;
+            padding: 8px 15px;
+            border-radius: 20px;
+            input{
+                max-width: 93%;
+                padding:5px 8px;
+                width: 100%;
+                outline: none;
+                border: none;
+                font-size: 18px;
+                font-weight: 400;
+                color: rgba(0, 0, 0, 0.5);
+                &::placeholder{
+                    font-size: 16px;
+                    font-weight: 400;
+                    color:#484848;
+                    ;
+                }
+            }
+            
+            img{
+                cursor: pointer;
+            }
+        }
+        .contact{
+            @include flex;
+            gap: 10px;
+            margin-left: 40px;
+            .tel{
+                @include flex;
+                align-items: start;
+                flex-direction: column;
+                .number{
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #000000;
+                }
+                .telegram{
+                    font-size: 14px;
+                    font-weight: 700;
+                    text-decoration: underline;
+                    color:#0078E7;
+                    
+                }
+            }
+        }
+    }
+}
