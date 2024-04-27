@@ -1,54 +1,163 @@
 #about {
-    background: #fff;
-    .about-wrapper {
+  background: #fff;
+  .about-wrapper {
+    @include flex;
+    align-items: start;
+    justify-content: space-between;
+    padding: 100px 0px;
+    @include devices(llg) {
+      padding: 80px 0px;
+    }
+    @include devices(md){
+      padding:60px 0px;
+    }
+    @include devices(mmd){
+      padding: 40px 0px;
+    }
+    @include devices(xxs){
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0px;
+    }
+    .content {
+      padding: 40px 0px;
       @include flex;
+      flex-direction: column;
       align-items: start;
-      justify-content: space-between;
-      padding: 100px 0px;
-      .content {
-        padding: 40px 0px;
-        @include flex;
-        flex-direction: column;
-        align-items: start;
-        h2 {
-            margin-left: 50px;
-          color: #000;
-          font-size: 50px;
-          font-weight: bold;
-          max-width: 655px;
-          width: 100%;
-          line-height: 70px;
-        }
-        p {
+      @include devices(llg) {
+        padding: 20px 0px;
+      }
+      @include devices(md){
+        padding: 0px;
+      }
+      h2 {
+        margin-left: 50px;
+        color: #000;
+        font-size: 50px;
+        font-weight: bold;
         max-width: 540px;
         width: 100%;
-          font-size: 18px;
-          font-weight: 300;
-          color: #000400;
+        line-height: 70px;
+        @include devices(llg) {
+          max-width: 400px;
         }
-        .btn {
-          margin-top: 30px;
-          button {
-            cursor: pointer;
-            @include flex;
-            font-size: 18px;
-            color: #fff;
-            font-weight: 400;
-            padding: 10px 70px;
-            border-radius: 20px;
-            border: none;
-            background: #007be7;
+        @include devices(md){
+          font-size: 45px;
+          line-height: 60px;
+          font-weight: 600;
+        }
+        @include devices(mmd){
+          max-width: 350px;
+          font-size: 35px;
+        }
+        @include devices(xs){
+          max-width: 300px;
+          font-size: 30px;
+          margin-left: 30px;
+        }
+        @include devices(xxs){
+          font-size: 35px;
+        }
+      }
+      p {
+        max-width: 540px;
+        width: 100%;
+        font-size: 18px;
+        font-weight: 300;
+        color: #000400;
+        @include devices(llg) {
+          max-width: 500px;
+        }
+        @include devices(md){
+          max-width: 400px;
+          font-size: 16px;
+        }
+        @include devices(mmd){
+          max-width: 350px;
+        }
+        @include devices(sm){
+          max-width: 300px;
+          font-size: 14px;
+        }
+        @include devices(xs){
+          max-width: 250px;
+          font-size: 12px;
+        }
+        @include devices(xxs){
+          max-width: 400px;
+          font-size: 16px;
+        }
+      }
+      .btn {
+        margin-top: 30px;
+        @include devices(md){
+          margin-top: 20px;
+        }
+        button {
+          cursor: pointer;
+          @include flex;
+          font-size: 18px;
+          color: #fff;
+          font-weight: 400;
+          padding: 10px 70px;
+          border-radius: 20px;
+          border: none;
+          background: #007be7;
+          @include devices(md){
+            padding: 8px 50px;
+            font-size: 16px;
+          }
+          @include devices(mmd){
+            padding: 8px 40px;
+          }
+          @include devices (sm){
+            padding: 6px 35px;
+            font-size: 14px;
+          }
+          @include devices(xxs){
+            font-size: 16px;
+            padding: 10px 50px;
+            border-radius: 15px;
           }
         }
       }
-      .img {
-        img {
+    }
+    .about-img {
+      @include devices(md){
+        margin-top: 20px;
+      }
+      @include devices(mmd){
+        margin-top: 40px;
+      }
+      @include devices(xs){
+        margin-top: 50px;
+      }
+      @include devices(xxs){
+        margin-top: 0px;
+      }
+      img {
+        max-width: 600px;
+        max-height: 600px;
+        width: 100%;
+        @include devices(llg) {
+          max-width: 500px;
+        }
+        @include devices(md){
+          max-width: 450px;
+        }
+        @include devices(mmd){
+          max-width: 400px;
+        }
+        @include devices (sm){
+          max-width: 350px;
+        }
+        @include devices(xs){
           max-width: 300px;
-          max-height: 300px;
-          width: 100%;
+        }
+        @include devices(xxs){
+          max-width: 400px;
         }
       }
     }
-    
   }
-  
+}

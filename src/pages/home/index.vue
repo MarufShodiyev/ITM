@@ -3,8 +3,8 @@
     <LogoHeader />
     <Banner />
     <About />
-    <Katolog />
-    <Semena />
+    <!-- <Katolog /> -->
+    <Semena /> 
     <Footer />
     
 </template>

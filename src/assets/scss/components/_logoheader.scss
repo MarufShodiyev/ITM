@@ -1,61 +1,225 @@
-#logo-header{
-    background: #ffff;
-    .logo-header-wrapper{
-        height: 70px;
-        @include flex;
-        margin-left: 70px;
-        .search{
-            border: 1px solid #00000033;
-            background: #ffff;
-            @include flex;
-            margin-left: 20px;
-            max-width: 342px;
-            width: 100%;
-            justify-content: space-between;
-            padding: 8px 15px;
-            border-radius: 20px;
-            input{
-                max-width: 93%;
-                padding:5px 8px;
-                width: 100%;
-                outline: none;
-                border: none;
-                font-size: 18px;
-                font-weight: 400;
-                color: rgba(0, 0, 0, 0.5);
-                &::placeholder{
-                    font-size: 16px;
-                    font-weight: 400;
-                    color:#484848;
-                    ;
-                }
-            }
-            
-            img{
-                cursor: pointer;
-            }
-        }
-        .contact{
-            @include flex;
-            gap: 10px;
-            margin-left: 40px;
-            .tel{
-                @include flex;
-                align-items: start;
-                flex-direction: column;
-                .number{
-                    font-size: 16px;
-                    font-weight: 400;
-                    color: #000000;
-                }
-                .telegram{
-                    font-size: 14px;
-                    font-weight: 700;
-                    text-decoration: underline;
-                    color:#0078E7;
-                    
-                }
-            }
-        }
+@keyframes slideOutToLeft {
+    from {
+    //   transform:translateY(0%);
+      height: 30%;
+      display: none;
     }
+    
+    to {
+    //   transform: translateY(10%);
+      height: 100vh;
+      display: flex;
+    }
+  }
+  
+  
+  @keyframes slideOutList {
+    from {
+      display: none;
+      height: 55px;
+    //   transform: calc(0);
+    }
+    to {
+      transform: scale(1);
+     display: flex;
+     height: 140px;
+    
+    }
+  }
+
+
+
+#logo-header {
+  background: #ffff;
+  .logo-header-wrapper {
+    height: 70px;
+    @include flex;
+    margin-left: 70px;
+    @include devices(mmd) {
+      margin-left: 60px;
+      height: 60px;
+    }
+    @include devices(ssm) {
+      margin-left: 50px;
+    }
+    @include devices(xxs) {
+      margin-left: 0px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      @include flex;
+      justify-content: center;
+      // max-width: 206px;
+      // width: 100%;
+      img {
+        max-width: 200px;
+        width: 100%;
+        @include devices(md) {
+          max-width: 170px;
+        }
+        @include devices(mmd) {
+          max-width: 150px;
+        }
+        @include devices(ssm) {
+          max-width: 130px;
+        }
+      }
+    }
+    .search {
+      border: 1px solid #00000033;
+      background: #ffff;
+      @include flex;
+      margin-left: 20px;
+      max-width: 342px;
+      width: 100%;
+      justify-content: space-between;
+      padding: 8px 15px;
+      border-radius: 20px;
+      @include devices(md) {
+        max-width: 280px;
+        padding: 6px 12px;
+        margin-left: 5px;
+      }
+      @include devices(mmd) {
+        max-width: 250px;
+      }
+      @include devices(ssm) {
+        max-width: 200px;
+        padding: 4px 8px;
+      }
+      @include devices(xs) {
+        max-width: 150px;
+      }
+      @include devices(xxs) {
+        display: none;
+      }
+      input {
+        max-width: 93%;
+        padding: 5px 8px;
+        width: 100%;
+        outline: none;
+        border: none;
+        font-size: 18px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.5);
+        @include devices(md) {
+          font-size: 16px;
+          padding: 3px 5px;
+        }
+        @include devices(ssm) {
+          font-size: 14px;
+        }
+        &::placeholder {
+          font-size: 16px;
+          font-weight: 400;
+          color: #484848;
+          @include devices(ssm) {
+            font-size: 14px;
+          }
+          @include devices(xs) {
+            font-size: 10px;
+          }
+        }
+      }
+
+      img {
+        cursor: pointer;
+      }
+    }
+    .contact {
+      @include flex;
+      gap: 10px;
+      margin-left: 40px;
+      @include devices(md) {
+        margin-left: 20px;
+        gap: 6px;
+      }
+      @include devices(xxs) {
+        display: none;
+      }
+      img {
+        max-width: 40px;
+        width: 100%;
+        @include devices(ssm) {
+          max-width: 30px;
+        }
+      }
+      .tel {
+        @include flex;
+        align-items: start;
+        flex-direction: column;
+        .number {
+          font-size: 16px;
+          font-weight: 400;
+          color: #000000;
+          @include devices(md) {
+            font-size: 14px;
+          }
+          @include devices(xs) {
+            font-size: 12px;
+          }
+        }
+        .telegram {
+          font-size: 14px;
+          font-weight: 700;
+          text-decoration: underline;
+          color: #0078e7;
+          @include devices(md) {
+            font-size: 12px;
+          }
+          @include devices(xs) {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+    .toggle {
+      cursor: pointer;
+      display: none;
+      @include devices(xxs) {
+        display: block;
+        align-items: center;
+      }
+      img {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  .position {
+    position: relative;
+  }
+  .header-menu {
+    position: absolute;
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+    top: 60px;
+    transition: 0.3s ease-in-out;
+    animation: slideOutToLeft 0.2s ease-in-out;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    ul {
+        animation: slideOutList 0.3s ease-in-out;
+        background-color: #f9f9fe;
+        padding: 20px 0;
+        width: 100%;
+        @include flex;
+        flex-direction: column;
+        li{
+            padding-top: 10px;
+            a{
+                font-size: 16px;
+                font-weight: 600;
+                color: blue;
+            }
+        }
+       
+        
+      }
+  }
+}
+.menu {
+  display: none;
 }

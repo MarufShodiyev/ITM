@@ -1,58 +1,156 @@
 .banner {
-    // background-image: url(`../../../../../../public/images/banner-bg.png);
-    background-image: url('../../images/banner-bg.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  // background-image: url(`../../../../../../public/images/banner-bg.png);
+  background-image: url("../../images/banner-bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   .banner-wrapper {
+    @include flex;
+    align-items: start;
+    justify-content: space-between;
+    padding: 100px 0px;
+    @include devices(md) {
+      padding: 70px 0px;
+    }
+    @include devices(mmd){
+        padding: 50px 0px;
+    }
+    @include devices(sm){
+        padding: 30px 0px;
+    }
+    @include devices(xs){
+        padding: 20px 0px;
+    }
+    @include devices(xxs){
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;        
+    }
+    .content {
+      padding: 40px 0px;
       @include flex;
+      flex-direction: column;
       align-items: start;
-      justify-content: space-between;
-      padding: 100px 0px;
-      .content {
-          padding: 40px 0px;
+      @include devices(md){
+        padding: 30px 0px;
+      }
+      @include devices(mmd){
+        padding: 20px 0px;
+      }
+      @include devices(xxs){
+        padding: 0px;
+        text-align: center;
+      }
+
+      h2 {
+        color: #000;
+        font-size: 50px;
+        font-weight: bold;
+        max-width: 655px;
+        width: 100%;
+        line-height: 70px;
+        @include devices(md){
+            font-size: 45px;
+        }
+        @include devices(mmd){
+            font-size: 35px;
+            font-weight: 600;
+            line-height: 50px;
+            max-width: 500px;
+        }
+        @include devices(sm){
+            font-size: 30px;
+            max-width: 400px;
+        }
+        @include devices(xs){
+            font-size: 28px;
+            max-width: 350px;
+            line-height: 38px;
+        }
+        @include devices(xxs){
+            max-width: 400px;
+            font-size: 30px;
+        }
+      }
+
+      p {
+        font-size: 18px;
+        font-weight: 300;
+        color: #000400;
+        @include devices(mmd){
+            font-size: 16px;
+        }
+        @include devices(xs){
+            font-size: 14px;
+        }
+        @include devices(xxs){
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+      }
+
+      .btn {
+        margin-top: 30px;
+        @include devices(mmd){
+            margin-top: 20px;
+        }
+        @include devices(xxs){
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+          }
+        button {
+          cursor: pointer;
           @include flex;
-          flex-direction: column;
-          align-items: start;
-
-          h2 {
-              color: #000;
-              font-size: 50px;
-              font-weight: bold;
-              max-width: 655px;
-              width: 100%;
-              line-height: 70px;
+          font-size: 18px;
+          color: #fff;
+          font-weight: 400;
+          padding: 10px 70px;
+          border-radius: 20px;
+          border: none;
+          background: #007be7;
+          @include devices(mmd){
+            padding: 10px 55px;
+            font-size: 16px;
+            border-radius: 15px;
           }
-
-          p {
-              font-size: 18px;
-              font-weight: 300;
-              color: #000400;
+          @include devices(xs){
+            padding: 10px 50px;
           }
-
-          .btn {
-              margin-top: 30px;
-
-              button {
-                  cursor: pointer;
-                  @include flex;
-                  font-size: 18px;
-                  color: #fff;
-                  font-weight: 400;
-                  padding: 10px 70px;
-                  border-radius: 20px;
-                  border: none;
-                  background: #007be7;
-              }
-          }
+         
+        }
       }
+    }
 
-      .img {
-          img {
-              max-width: 735px;
-              max-height: 600px;
-              width: 100%;
-          }
+    .img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 30px;
+      img {
+        max-width: 735px;
+        max-height: 600px;
+        width: 100%;
+        @include devices(md){
+            max-width: 600px;
+        }
+        @include devices(mmd){
+            max-width: 500px;
+        }
+        @include devices(sm){
+            max-width: 400px;
+        }
+        @include devices(xs){
+            max-width: 300px;
+        }
+        @include devices(xxs){
+            max-width: 400px;
+        }
       }
+    }
   }
 }

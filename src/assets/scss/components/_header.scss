@@ -4,28 +4,43 @@
         max-width: 873px;
         ul{
             margin-left: 70px;
-            // width: 38%;
             height: 50px;
             @include flex;
             gap: 20px;
-            // align-items: end;
+            @include devices(mmd){
+                margin-left: 60px;
+            }
+            @include devices(ssm){
+                margin-left: 50px;
+            }
+            @include devices(xs){
+                gap: 10px;
+                height: 35px;
+            }
+            @include devices(xxs){
+                display: none;
+            }
             li{
                 
-                // background-color: red;
                 a{
                     padding: 8px 20px;
                     cursor: pointer;
                     font-size: 16px;
                     font-weight: 300;
                     color: #ffffff;
-                    
                     @include flex;
-                    
+                    @include devices(xl){
+                        padding: 5px 15px;
+                        font-size: 14px;
+                    }
                     &:hover{
                        background-color: blue;
                        color: #ffffff;
                        border-radius: 20px;
                        translate: all 0.3s ;
+                       @include devices(xs){
+                        border-radius: 15px;
+                       }
                         
                     }
                 }

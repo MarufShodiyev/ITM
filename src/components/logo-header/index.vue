@@ -1,5 +1,5 @@
 <template>
-    <div id="logo-header">
+    <div id="logo-header" :class="{'position':menu}">
         <div class="container">
             <div class="logo-header-wrapper">
                 <div class="logo">
@@ -17,8 +17,22 @@
                     </div>
 
                 </div>
-                
+                <div class="toggle" v-if="!menu" @click="OpenMenu()">
+                    <img src="../../assets/icons/menu.svg" alt="menu icon">
+                </div>
+                <div class="toggle" v-if="menu" @click="OpenMenu()">
+                    <img src="../../assets/icons/close.svg" alt="menu icon">
+                </div>
             </div>
         </div>
+        <Menu @click="OpenMenu()" :class="{ 'menu': !menu }"/>
     </div>
 </template>
+<script setup>
+import { ref } from 'vue';
+import Menu from '../header/menu.vue'
+let menu = ref(false)
+const OpenMenu = () => {
+    menu.value = !menu.value
+}
+</script>

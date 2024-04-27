@@ -8,7 +8,23 @@
       // background: red;
       padding: 50px 0px;
       border-bottom: 1px solid #000;
+      @include devices(md){
+        flex-direction: column ;
+      }
       .footer-logo{
+        img{
+          max-width: 200px;
+          width: 100%;
+          @include devices(md) {
+            max-width: 170px;
+          }
+          @include devices(mmd) {
+            max-width: 150px;
+          }
+          @include devices(ssm) {
+            max-width: 130px;
+          }
+        }
         p{
             font-size: 16px;
             font-weight: 300;
@@ -19,11 +35,23 @@
       }
       .content {
         margin-top: 30px;
+        @include devices(sm){
+          margin-top: 15px;
+          
+        }
         ul {
           @include flex;
           align-items: start;
           justify-content: space-around;
           gap: 50px;
+          @include devices(sm){
+            gap: 20px;
+          }
+          @include devices(xs){
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: start;
+          }
           li{
             h3{
                 font-size: 18px;
@@ -76,12 +104,8 @@
     .footer-bottom{
       padding: 10px 0px;
       @include flex;
-    //   text-align: center;
-    //   margin: 0 auto;
-      text-align: center;
       justify-content: center;
       span{
-        // text-align: center;
           font-size:16px;
       }
     }
